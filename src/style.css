@@ -1,0 +1,90 @@
+@charset "utf-8";
+*{margin:0;padding:0;box-sizing:border-box;}
+input{
+    background:transparent;
+    padding:1em;
+    border:2px solid rgba(255,255,255,.5); border-radius:4px;
+    font-size:inherit;color:inherit;}
+html,body{
+    display:flex; flex-flow:column nowrap;
+    justify-content:center; align-items:center;
+    width:100%; min-height:100vh;
+    background:#000; 
+    font-size:20px;color:#fff;}
+
+/* form */
+input[type="number"]{width:10ch;}
+#ipt-mine{font-weight:bold;color:red;}
+#ipt-btn{
+    padding:.8em 2em; margin-left:1em;
+    background:mediumturquoise;
+    font-weight:bold;color:#000;
+    cursor:pointer;}
+
+    #ipt-btn:hover{
+        transform:translate(2px,2px);
+        filter:brightness(90%);}
+
+    #ipt-btn.started{background-color:rgba(220, 20, 60, 0.5); color:#fff;}
+
+/* info */
+#info{
+    display:flex; flex-flow:row wrap;
+    justify-content:center;
+    position:relative; 
+    width:100%;
+    padding:1em; margin:2rem 0;
+    background:rgba(255,255,255,.1);}
+
+#message{
+    width:100%; position:relative;
+    margin-bottom:1rem;
+    text-align:center;font-size:1.5rem;}
+
+    #message:empty::after{
+        content:'게임 준비중...'; position:absolute;
+        left:50%; top:50%;
+        transform:translate(-50%,-15%);
+        opacity:.3;
+        font-size:1rem;}
+
+#flag{
+    position:relative;
+    margin-left:2rem;
+    color:crimson;}
+
+#flag::before{
+    content:'🚩';
+    margin-right:10px;}
+
+    #flag:empty:before{display:none;}
+
+
+/* 테이블 */
+#tbl{
+    position:relative;
+    border-collapse:collapse;}
+
+#tbl td{
+    position:relative;
+    width:50px; height:50px; line-height:50px;
+    background:rgba(255,255,255,.2);
+    border:1px solid rgba(255,255,255,.5);
+    text-align:center;
+    cursor:pointer; user-select:none;}
+
+
+    #tbl td.opened{background:#111;}
+
+    #tbl td.question{background:rgba(255, 189, 65, 0.8);}
+    #tbl td.question::after{
+        content:"❓";}
+
+    #tbl td.flag{background:rgba(255, 0, 0, 0.3);}
+    #tbl td.flag::after{content:'🚩';}
+
+    #tbl td.bomb{background:rgba(255, 0, 0, 1);}
+    #tbl td.bomb::after{content:'💣';}
+
+    #tbl td.checking{
+        filter:brightness(50%);}
