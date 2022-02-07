@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지뢰찾기 Mine 002</title>
+<link rel="stylesheet" type="text/css" href="./src/style.css"/>
+<script src="./src/main.js" type="module"></script>
+</head>
+<body>
+    <!-- 지뢰 개수 입력 받기 -->
+    <form id="ipt-form">
+        <input type="number" min="2" max="20" value="5" placeholder="행" id="ipt-row"/>
+        <input type="number" min="2" max="20" value="5" placeholder="열" id="ipt-col"/>
+        <input type="number" value="5" placeholder="지뢰 갯수" id="ipt-mine"/>
+        <input type="submit" value="시작" id="ipt-btn"/><!-- 시작/정지 -->
+    </form>
+
+    <!-- 타이머,깃발 표시 겸 승리/패배시 메세지 표시까지 -->
+    <section id="info">
+        <div id="message"></div><!-- 게임 준비중/😊/승리/패배 -->
+        <div id="timer"></div><!-- 00:00 -->
+        <div id="flag"></div><!-- 🚩NN -->
+    </section>
+    
+    <!-- 테이블 영역 -->
+    <table id="tbl">
+        <tbody>
+        </tbody>
+    </table><!-- tbl -->
+</body>
+</html>
